@@ -1,0 +1,74 @@
+{
+	"name": "ghost-upload",
+	"displayName": "Ghost Upload",
+	"description": "Upload posts directly to Ghost",
+	"icon": "images/orange.png",
+	"version": "0.0.1-alpha",
+	"publisher": "Michael Leonffu",
+	"author": {
+		"name": "Michael Leonffu",
+		"email": "leonffu.michael@gmail.com",
+		"url": "https://github.com/MichaelLeonffu"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/MichaelLeonffu/ghost-upload"
+	},
+	"homepage": "https://github.com/MichaelLeonffu/ghost-upload",
+	"bugs": {
+		"url": "https://github.com/MichaelLeonffu/ghost-upload/issues"
+	},
+	"main": "./out/extension.js",
+	"categories": [
+		"Snippets"
+	],
+	"keywords": [
+		"Ghost.js",
+		"Ghost",
+		"Blog",
+		"Upload"
+	],
+	"engines": {
+		"vscode": "^1.64.0"
+	},
+	"activationEvents": [
+	"onCommand:ghost-upload.helloWorld",
+	"onCommand:ghost-upload.ghostRead"
+	],
+	"contributes": {
+		"commands": [
+			{
+				"command": "ghost-upload.helloWorld",
+				"title": "Hello World"
+			},
+			{
+				"command": "ghost-upload.ghostRead",
+				"title": "Ghost Read"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"pretest": "npm run compile && npm run lint",
+		"lint": "eslint src --ext ts",
+		"test": "node ./out/test/runTest.js"
+	},
+	"devDependencies": {
+		"@types/glob": "^7.2.0",
+		"@types/mocha": "^9.1.0",
+		"@types/node": "14.x",
+		"@types/vscode": "^1.64.0",
+		"@typescript-eslint/eslint-plugin": "^5.12.1",
+		"@typescript-eslint/parser": "^5.12.1",
+		"@vscode/test-electron": "^2.1.2",
+		"eslint": "^8.9.0",
+		"glob": "^7.2.0",
+		"mocha": "^9.2.1",
+		"typescript": "^4.5.5"
+	},
+	"dependencies": {
+		"@tryghost/admin-api": "^1.6.0"
+	}
+}
